@@ -2,8 +2,8 @@
 
 Ces photographies illustrent des gestes courants en commerce. Les personnes et les marques visibles ne sont pas des clients, partenaires ou utilisateurs de FIDELITIZ.
 
-- `assets/usage-qr.jpg` — iMin Technology, [photo originale](https://www.pexels.com/photo/a-close-up-shot-of-a-person-scanning-a-qr-code-12935064/).
-- `assets/usage-caisse.jpg` — SpotOn POS, [photo originale](https://www.pexels.com/photo/contactless-payment-at-restaurant-bar-counter-37594390/).
-- `assets/usage-nfc.jpg` — Pavel Danilyuk, [photo originale](https://www.pexels.com/photo/a-woman-in-black-shirt-using-a-payment-terminal-at-the-counter-6612714/).
+- `assets/usage-qr.jpg` — Marielle Ursua, [photo originale](https://unsplash.com/photos/a-person-holding-up-a-smart-phone-in-front-of-a-counter-zrD1yiGuewA). La caméra vise le QR affiché sur un autre appareil.
+- `assets/usage-caisse.jpg` — iMin Technology, [photo originale](https://www.pexels.com/photo/a-close-up-shot-of-a-person-scanning-a-qr-code-12935051/). Le QR du téléphone est présenté face au lecteur.
+- `assets/usage-nfc.jpg` — Pavel Danilyuk, [photo originale](https://www.pexels.com/photo/a-person-making-payment-using-smartphone-6812431/). Le haut du téléphone est approché d’un lecteur sans contact.
 
-Utilisation selon la [licence Pexels](https://www.pexels.com/legal-pages/license/). Images téléchargées en résolution adaptée au Web.
+Utilisation selon les licences [Unsplash](https://unsplash.com/license) et [Pexels](https://www.pexels.com/license/). Images téléchargées en résolution adaptée au Web.
