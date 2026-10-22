@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+      <defs>
+  <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#f4e7d1"/></linearGradient>
+  <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#f7efdc"/><stop offset="1" stop-color="#e0d0ae"/></linearGradient>
+  <linearGradient id="card" x2="1" y2="1"><stop stop-color="#f6bb46"/><stop offset="1" stop-color="#e7784a"/></linearGradient>
+  <linearGradient id="night" x2="0" y2="1"><stop stop-color="#45352d"/><stop offset="1" stop-color="#211d19"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#3e2815" flood-opacity=".17"/></filter>
+  <filter id="small-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#3e2815" flood-opacity=".15"/></filter>
+</defs><rect width="1200" height="900" fill="#f7ecda"/>
+  <path d="M0 672H1200V900H0Z" fill="#d9ad7d"/>
+  <path d="M0 672H1200" stroke="#bf8a5f" stroke-width="8"/>
+  <ellipse cx="544" cy="695" rx="450" ry="54" fill="#9c7150" opacity=".15"/>
+  <g filter="url(#shadow)">
+    <rect x="188" y="115" width="377" height="626" rx="58" fill="#26221e"/>
+    <rect x="203" y="131" width="347" height="592" rx="45" fill="#fffaf0"/>
+    <rect x="305" y="138" width="143" height="26" rx="13" fill="#26221e"/>
+    <rect x="221" y="184" width="311" height="262" rx="22" fill="url(#card)"/>
+    <text x="247" y="237" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#412a21">Café Marcel</text>
+    <path d="M219 367Q343 300 534 372V430Q390 396 221 449Z" fill="#6e392c" opacity=".88"/>
+    <text x="247" y="402" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#fff">Camille R.</text>
+    <text x="247" y="428" font-family="Arial,sans-serif" font-size="14" fill="#fff0dd">CARTE DE FIDÉLITÉ</text>
+    <svg x="293" y="473" width="174" height="174" viewBox="0 0 600 600" shape-rendering="crispEdges" aria-hidden="true">
+      <rect width="600" height="600" fill="#fff"/><path d="M48 552L216 552L216 384L48 384ZM288 552L336 552L336 528L288 528ZM360 552L432 552L432 528L408 528L408 456L384 456L384 480L360 480L360 504L384 504L384 528L360 528ZM456 552L504 552L504 528L528 528L528 552L552 552L552 480L528 480L528 504L504 504L504 480L456 480L456 504L480 504L480 528L456 528ZM72 528L72 408L192 408L192 528ZM240 528L264 528L264 504L288 504L288 480L240 480ZM336 528L360 528L360 504L336 504ZM432 528L456 528L456 504L432 504ZM96 504L168 504L168 432L96 432ZM312 480L336 480L336 456L312 456ZM432 480L456 480L456 456L504 456L504 432L528 432L528 408L504 408L504 384L480 384L480 408L456 408L456 384L432 384L432 360L408 360L408 336L384 336L384 432L408 432L408 408L432 408L432 432L408 432L408 456L432 456ZM504 480L528 480L528 456L504 456ZM240 456L288 456L288 432L240 432ZM360 456L384 456L384 432L360 432ZM288 432L360 432L360 360L336 360L336 312L360 312L360 336L384 336L384 288L408 288L408 240L384 240L384 264L360 264L360 168L336 168L336 216L312 216L312 240L336 240L336 288L312 288L312 312L264 312L264 336L312 336L312 360L240 360L240 408L288 408L288 384L312 384L312 408L288 408ZM528 408L552 408L552 360L504 360L504 384L528 384ZM456 384L480 384L480 360L456 360ZM96 360L120 360L120 336L96 336ZM192 360L216 360L216 336L192 336ZM432 360L456 360L456 336L432 336ZM48 336L72 336L72 312L48 312ZM120 336L144 336L144 288L120 288ZM456 336L504 336L504 288L528 288L528 264L552 264L552 240L432 240L432 312L456 312L456 264L480 264L480 312L456 312ZM528 336L552 336L552 288L528 288ZM72 312L96 312L96 264L120 264L120 240L72 240L72 264L48 264L48 288L72 288ZM192 312L240 312L240 288L264 288L264 264L240 264L240 240L192 240L192 264L216 264L216 288L192 288ZM168 288L192 288L192 264L168 264ZM288 288L312 288L312 264L288 264ZM144 264L168 264L168 240L144 240ZM264 264L288 264L288 216L264 216L264 192L240 192L240 240L264 240ZM48 216L216 216L216 48L48 48ZM288 216L312 216L312 192L288 192ZM384 216L552 216L552 48L384 48ZM72 192L72 72L192 72L192 192ZM264 192L288 192L288 168L336 168L336 144L360 144L360 120L336 120L336 72L312 72L312 48L288 48L288 72L264 72L264 48L240 48L240 168L264 168ZM408 192L408 72L528 72L528 192ZM96 168L168 168L168 96L96 96ZM432 168L504 168L504 96L432 96ZM264 120L264 96L288 96L288 120ZM336 72L360 72L360 48L336 48Z" fill="#211d19"/>
+    </svg>
+    <text x="377" y="675" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#786b5e">Présenter en caisse</text>
+  </g>
+  <path d="M398 555L763 456L765 532Z" fill="#f1a06f" opacity=".25"/>
+  <path d="M415 557L744 492" stroke="#f27852" stroke-width="6" stroke-dasharray="12 13" opacity=".75"/>
+  <g transform="rotate(-14 852 483)" filter="url(#shadow)">
+    <path d="M790 380L987 380Q1012 380 1012 406V501Q1012 526 987 526H790Q761 526 761 497V408Q761 380 790 380Z" fill="#272723"/>
+    <rect x="776" y="395" width="221" height="57" rx="10" fill="#494d48"/>
+    <rect x="790" y="412" width="194" height="20" rx="5" fill="#c6d9cc"/>
+    <path d="M835 525H943L924 694Q920 716 899 716H867Q846 716 842 694Z" fill="#363a35"/>
+    <rect x="852" y="561" width="75" height="30" rx="8" fill="#f6c846"/>
+  </g>
+  <path d="M809 357Q736 343 696 386" fill="none" stroke="#b6956f" stroke-width="4" stroke-dasharray="7 12" opacity=".7"/>
+  <rect x="778" y="769" width="284" height="55" rx="27" fill="#fff9eb" opacity=".75"/>
+  <circle cx="811" cy="796" r="10" fill="#f27250"/>
+  <text x="834" y="804" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#503a2b">+ 1 passage</text>
+
+    </svg>

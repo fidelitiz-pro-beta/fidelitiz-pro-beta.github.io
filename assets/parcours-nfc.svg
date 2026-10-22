@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img">
+      <defs>
+  <linearGradient id="paper" x2="1" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#f4e7d1"/></linearGradient>
+  <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#f7efdc"/><stop offset="1" stop-color="#e0d0ae"/></linearGradient>
+  <linearGradient id="card" x2="1" y2="1"><stop stop-color="#f6bb46"/><stop offset="1" stop-color="#e7784a"/></linearGradient>
+  <linearGradient id="night" x2="0" y2="1"><stop stop-color="#45352d"/><stop offset="1" stop-color="#211d19"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#3e2815" flood-opacity=".17"/></filter>
+  <filter id="small-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#3e2815" flood-opacity=".15"/></filter>
+</defs><rect width="1200" height="900" fill="#f5ead8"/>
+  <path d="M0 685H1200V900H0Z" fill="#d3a474"/>
+  <path d="M0 685H1200" stroke="#b98054" stroke-width="8"/>
+  <ellipse cx="623" cy="713" rx="438" ry="55" fill="#89654a" opacity=".18"/>
+  <g transform="translate(160 95) rotate(20 390 412)" filter="url(#shadow)">
+    <rect x="205" y="135" width="340" height="590" rx="55" fill="#252420"/>
+    <rect x="221" y="151" width="308" height="558" rx="41" fill="#fbf4e7"/>
+    <rect x="301" y="157" width="143" height="27" rx="14" fill="#252420"/>
+    <rect x="242" y="214" width="266" height="282" rx="22" fill="url(#card)"/>
+    <text x="266" y="266" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#4a2c20">Café Marcel</text>
+    <path d="M242 416Q371 341 508 411V475Q372 439 242 494Z" fill="#773d2d"/>
+    <text x="266" y="457" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#fff">Camille R.</text>
+    <rect x="257" y="540" width="235" height="85" rx="15" fill="#f2e7d6"/>
+    <path d="M341 565q35 17 0 36m19-48q55 30 0 59" fill="none" stroke="#c76f4b" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="325" cy="583" r="7" fill="#c76f4b"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M780 455L1004 455L1050 702H738Z" fill="#59534b"/>
+    <rect x="764" y="400" width="258" height="253" rx="32" fill="#262d28"/>
+    <rect x="785" y="420" width="216" height="172" rx="23" fill="#e9efda"/>
+    <circle cx="893" cy="500" r="59" fill="#d0dfc4"/>
+    <path d="M867 499q34 14 0 33m20-56q58 28 0 80m21-105q81 46 0 106" fill="none" stroke="#57746a" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="850" cy="517" r="7" fill="#57746a"/>
+    <rect x="844" y="609" width="97" height="13" rx="6" fill="#758d74"/>
+  </g>
+  <path d="M671 326q46-38 91-21m-87 60q52-21 91-7m-82 44q44-6 78 9" fill="none" stroke="#e7784a" stroke-width="7" stroke-linecap="round" opacity=".68"/>
+  <rect x="102" y="769" width="446" height="56" rx="28" fill="#fff9eb" opacity=".8"/>
+  <text x="130" y="805" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#5c4534">Interaction NFC à expérimenter</text>
+
+    </svg>
