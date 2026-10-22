@@ -1,4 +1,8 @@
-# Photos de la page bêta
+# Anciennes photos, remplacées sur la page bêta
+
+Les visuels affichés par la page sont désormais les quatre illustrations SVG originales générées par `build-illustrations.py`. Elles montrent séparément l’adhésion par QR, la présentation de la carte en caisse et l’hypothèse NFC. Les QR codes sont issus des actifs de démonstration du projet.
+
+Les anciennes photographies restent archivées dans `assets` avec leurs crédits ci-dessous ; elles ne sont plus affichées sur la page.
 
 Ces photographies illustrent des gestes courants en commerce. Les personnes et les marques visibles ne sont pas des clients, partenaires ou utilisateurs de FIDELITIZ.
 
