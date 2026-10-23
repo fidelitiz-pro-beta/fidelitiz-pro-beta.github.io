@@ -48,3 +48,34 @@ footer{background:#211f1c;color:#fff;padding:52px 0}.footer-grid{display:flex;ju
 .audience-card>a{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:19px 33px;background:#fffaf0;font-size:14px;font-weight:620}
 .audience-card>a:hover{text-decoration:underline;text-underline-offset:4px}
 @media(max-width:720px){.audience{padding:73px 0 79px}.audience h2{font-size:clamp(46px,10vw,60px);margin-bottom:27px}.audience-grid{grid-template-columns:1fr;gap:22px}.audience-copy{min-height:0;padding:25px 25px 20px}.audience h3{font-size:28px}.audience-card>a{padding:18px 25px}}
+
+/* Two honest product views: the same phone shell as the client, then the desktop dashboard. */
+.pro-scene{position:relative;flex:1;min-height:390px;overflow:hidden}
+.scan-phone.audience-screen{position:absolute;z-index:2;left:7%;top:11px;width:min(205px,44%);height:345px;aspect-ratio:auto;border-bottom:3px solid #29231e;border-radius:33px;background:#191713;padding:0;box-shadow:0 18px 33px #30221930}
+.scan-phone::before{content:'23:27';position:absolute;z-index:4;left:13px;top:11px;color:#211d19;font-size:8px;font-weight:700}
+.scan-phone::after{content:'● ●';position:absolute;z-index:4;right:12px;top:10px;color:#211d19;font-size:7px;letter-spacing:1px}
+.scan-island{position:absolute;z-index:4;left:50%;top:9px;transform:translateX(-50%);width:72px;height:16px;background:#151515;border-radius:20px}
+.scan-top{display:flex;justify-content:space-between;align-items:center;height:58px;padding:28px 14px 7px;background:#fff;color:#211d19;font-size:11px;font-weight:600}
+.scan-top span:last-child{font-size:20px;line-height:1;font-weight:300}
+.scan-camera{position:relative;height:235px;overflow:hidden;background:#2d2a25}
+.scan-camera img{width:100%;height:100%;object-fit:cover;object-position:center 72%;filter:brightness(.72);max-width:none}
+.scan-reticle{position:absolute;inset:32px 22px;border:3px solid #f5c845;border-radius:17px;box-shadow:0 0 0 100px #14110f33}
+.scan-result{display:flex;align-items:center;gap:8px;padding:10px 12px;color:#fff;font-size:11px;font-weight:620}
+.scan-result small{display:block;font-size:8px;font-weight:400;color:#d2cbc2}
+.scan-check{display:grid;place-items:center;width:23px;height:23px;flex:none;border-radius:50%;background:#f5c845;color:#211d19}
+.desk-device{position:absolute;z-index:3;right:3%;top:146px;width:min(344px,73%);filter:drop-shadow(0 17px 13px #35291d34)}
+.desk-display{height:216px;padding:7px;border:5px solid #252422;border-radius:12px 12px 4px 4px;background:#f7f5ef;overflow:hidden}
+.desk-bar{display:flex;align-items:center;justify-content:space-between;height:30px;padding:0 8px;background:#f5c845;font-size:8px;font-weight:550}
+.desk-brand{font-size:12px;font-weight:700;letter-spacing:-.045em}.desk-brand span{color:#d66450}
+.desk-body{display:grid;grid-template-columns:73px 1fr;height:calc(100% - 30px)}
+.desk-nav{display:flex;flex-direction:column;gap:11px;padding:18px 7px;background:#28241f;color:#eee9df;font-size:7px}
+.desk-nav span:first-child{color:#f5c845;font-weight:650}
+.desk-content{padding:12px 13px;min-width:0}.desk-content>strong{font-size:13px;font-weight:600}.desk-content>small{display:block;font-size:7px;color:#746b60;margin:2px 0 10px}
+.desk-stats{display:grid;grid-template-columns:1fr 1fr;gap:7px}.desk-stats>div{background:#fff;border:1px solid #e7e0d4;border-radius:7px;padding:8px}.desk-stats b{display:block;font-size:19px;line-height:1}.desk-stats small{font-size:7px;color:#6e665d}
+.desk-chart{display:flex;align-items:end;gap:7px;height:47px;padding:8px 9px 0;margin-top:8px;background:#fff;border:1px solid #e7e0d4;border-radius:7px}.desk-chart i{flex:1;height:45%;border-radius:3px 3px 0 0;background:#e99973}.desk-chart i:nth-child(2){height:68%}.desk-chart i:nth-child(3){height:53%}.desk-chart i:nth-child(4){height:84%}.desk-chart i:nth-child(5){height:62%}.desk-chart i:nth-child(6){height:91%}.desk-chart i:nth-child(7){height:72%}
+.desk-base{height:10px;margin:0 -13px;background:linear-gradient(#d5d0c9,#a49f99);clip-path:polygon(4% 0,96% 0,100% 100%,0 100%);border-radius:0 0 18px 18px}
+
+.rewards{background:#fbf9f4}.rewards-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:8%;align-items:end;margin-bottom:48px}.rewards-intro h2{max-width:700px}.rewards-intro p{max-width:380px;margin:0 0 6px;font-size:18px;line-height:1.48;color:#5e554c}
+.reward-row{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:7%;padding:26px 0}.reward-row+.reward-row{border-top:1px solid #e1d9ca}.reward-row img{display:block;width:100%;height:365px;object-fit:cover;border-radius:22px}.reward-copy{max-width:390px;padding:12px 0}.reward-number{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:#f5c845;font-size:13px;font-weight:650}.reward-copy h3{font-size:clamp(31px,3.2vw,43px);font-weight:550;line-height:1.05;letter-spacing:-.055em;margin:20px 0 15px}.reward-copy p{font-size:17px;line-height:1.5;color:#5e554c;margin:0}.reward-reverse{grid-template-columns:1.15fr .85fr}.reward-reverse img{grid-column:1;grid-row:1}.reward-reverse .reward-copy{grid-column:2;grid-row:1}
+@media(max-width:720px){.pro-scene{min-height:570px}.scan-phone.audience-screen{left:calc(50% - 80px);width:160px;height:310px}.scan-camera{height:202px}.scan-reticle{inset:28px 18px}.desk-device{right:4%;top:336px;width:92%}.desk-display{height:184px}.desk-nav{width:auto;gap:9px;padding:14px 5px}.desk-body{grid-template-columns:55px 1fr}.desk-content{padding:9px}.desk-content>strong{font-size:10px}.desk-stats b{font-size:15px}.desk-chart{height:32px}.rewards-intro{display:block;margin-bottom:27px}.rewards-intro p{font-size:16px;margin-top:17px}.reward-row,.reward-reverse{grid-template-columns:1fr;gap:20px;padding:27px 0}.reward-row img,.reward-reverse img{grid-column:1;grid-row:1;height:270px;border-radius:18px}.reward-copy,.reward-reverse .reward-copy{grid-column:1;grid-row:2;padding:0 2px}.reward-copy h3{font-size:32px;margin:14px 0 11px}.reward-copy p{font-size:16px}}
+@media(max-width:390px){.desk-device{width:92%;right:4%}.scan-phone.audience-screen{width:151px;left:calc(50% - 75.5px)}.desk-bar{font-size:7px}.desk-nav{font-size:6px}}
