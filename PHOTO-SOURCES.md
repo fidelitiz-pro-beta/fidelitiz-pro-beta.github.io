@@ -4,7 +4,7 @@ Le header conserve son illustration d’origine (`hero-wallets.png`). Le parcour
 
 Le bloc « De chaque côté du comptoir » montre la carte de Camille (`vue-client.jpg`) et la vraie fiche de passage en caisse de la démo (`vue-professionnel.jpg`). Le tableau de bord sur ordinateur est une réduction HTML/CSS de la vue d’ensemble réelle : libellés et chiffres de démonstration constatés sur la page de test. Le montant de 12 € apparaît sur la fiche de caisse ; aucun point n’a été crédité pour cette capture.
 
-La section « La récompense vous ressemble » utilise trois nouvelles scènes d’illustration générées pour cette page : `recompense-cafe-v2.jpg`, `recompense-boulangerie-v2.jpg` et `recompense-fleuriste-v2.jpg`. Le cadrage laisse une place importante aux rues de pierre blonde évoquant Bordeaux et garde un rendu de photo prise sur le vif. Ces images ne représentent ni une rue identifiée avec certitude, ni des commerces ou clients réels de FIDELITIZ. Les premières versions restent archivées dans `assets`.
+La section « La récompense vous ressemble » utilise trois scènes d’illustration générées pour cette page : `recompense-cafe-v3.jpg` (café remis contre des points), `recompense-boulangerie-v3.jpg` (viennoiserie remise après plusieurs visites) et `recompense-fleuriste-v3.jpg` (fleur supplémentaire ajoutée au bouquet). Le cadrage laisse une place importante aux rues de pierre blonde évoquant Bordeaux et garde un rendu de photo prise sur le vif. Ces images ne représentent ni une rue identifiée avec certitude, ni des commerces ou clients réels de FIDELITIZ. Les versions précédentes restent archivées dans `assets`.
 
 Les anciennes photographies restent archivées dans `assets` avec leurs crédits ci-dessous ; elles ne sont plus affichées sur la page.
 
