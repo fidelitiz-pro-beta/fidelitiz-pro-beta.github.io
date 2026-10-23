@@ -27,3 +27,24 @@ footer{background:#211f1c;color:#fff;padding:52px 0}.footer-grid{display:flex;ju
 .footer-logo{color:#fff8e9}
 .footer-logo .glyph-spine{background:#f8c83e}
 @media(max-width:720px){.nav>.brand-logo{transform:scale(1)}}
+
+/* The original hero image and its shadow remain unchanged. */
+.hero-art img{filter:drop-shadow(0 13px 19px #4b351922)}
+
+.audience{padding:96px 0 104px;background:#eee5d6}
+.audience h2{font-size:clamp(49px,5.5vw,70px);font-weight:540;line-height:1;letter-spacing:-.06em;margin:0 0 37px}
+.audience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.audience-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid #d8c8ae;border-radius:24px;background:#f4d88d}
+.audience-pro{background:#e5d9c9}
+.audience-copy{padding:29px 33px 24px;min-height:173px}
+.audience-label{font-size:12px;font-weight:650;letter-spacing:.11em;text-transform:uppercase;margin:0 0 10px}
+.audience h3{font-size:31px;font-weight:560;line-height:1.06;letter-spacing:-.045em;margin:0 0 9px}
+.audience-copy>p:last-child{font-size:15px;line-height:1.45;color:#59483a;margin:0;max-width:410px}
+.audience-stage{display:flex;justify-content:center;align-items:flex-start;overflow:hidden;padding:7px 25px 0}
+.audience-screen{width:min(300px,100%);aspect-ratio:390/720;flex:none;overflow:hidden;border:3px solid #29231e;border-bottom:0;border-radius:33px 33px 0 0;background:#fff;box-shadow:0 15px 34px #4b35193d}
+.audience-screen img{display:block;width:100%;height:auto;max-width:none}
+.audience-pro .audience-stage{flex:1;align-items:flex-end}
+.audience-pro .audience-screen{aspect-ratio:430/690}
+.audience-card>a{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding:19px 33px;background:#fffaf0;font-size:14px;font-weight:620}
+.audience-card>a:hover{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:720px){.audience{padding:73px 0 79px}.audience h2{font-size:clamp(46px,10vw,60px);margin-bottom:27px}.audience-grid{grid-template-columns:1fr;gap:22px}.audience-copy{min-height:0;padding:25px 25px 20px}.audience h3{font-size:28px}.audience-card>a{padding:18px 25px}}

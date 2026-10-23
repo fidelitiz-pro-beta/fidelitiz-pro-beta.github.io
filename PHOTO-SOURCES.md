@@ -1,6 +1,8 @@
 # Anciennes photos, remplacées sur la page bêta
 
-Les visuels affichés par la page sont désormais les quatre illustrations SVG originales générées par `build-illustrations.py`. Elles montrent séparément l’adhésion par QR, la présentation de la carte en caisse et l’hypothèse NFC. Les QR codes sont issus des actifs de démonstration du projet.
+Le header conserve son illustration d’origine (`hero-wallets.png`). Le parcours utilise trois illustrations SVG originales générées par `build-illustrations.py` : adhésion par QR, présentation de la carte en caisse et hypothèse NFC. Les QR codes sont issus des actifs de démonstration du projet.
+
+Le bloc « De chaque côté du comptoir » montre des captures de la démo FIDELITIZ : `vue-client.jpg` pour la carte de Camille et `vue-professionnel.jpg` pour la fiche de passage en caisse. Le montant de 12 € y est saisi à titre d’exemple ; aucun point n’a été crédité pour la capture.
 
 Les anciennes photographies restent archivées dans `assets` avec leurs crédits ci-dessous ; elles ne sont plus affichées sur la page.
 
