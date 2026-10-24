@@ -41,7 +41,7 @@ function showCompanies(companies) {
     button.type = 'button';
     button.className = 'result';
     name.textContent = company.nom_complet || company.nom_raison_sociale || 'Entreprise';
-    detail.textContent = `SIREN ${company.siren || '—'} · ${company.siege?.libelle_commune || 'Ville non renseignée'}`;
+    detail.textContent = `SIREN ${company.siren || '—'}`;
     button.append(name, detail);
     button.addEventListener('click', () => chooseCompany(company));
     fragment.append(button);
@@ -75,7 +75,6 @@ async function runSearch() {
     url.searchParams.set('q', query);
     url.searchParams.set('per_page', '6');
     url.searchParams.set('minimal', 'true');
-    url.searchParams.set('include', 'siege');
     const response = await fetch(url, {
       signal: active.signal,
       headers: { accept: 'application/json' }
@@ -87,7 +86,10 @@ async function runSearch() {
     searchCache.set(key, { companies, time: Date.now() });
     showCompanies(companies);
   } catch (error) {
-    if (version === searchVersion && error.name !== 'AbortError') showSearchStatus(`${error.message} Vous pouvez remplir la fiche manuellement.`, true);
+    if (version === searchVersion && error.name !== 'AbortError') {
+      const message = error instanceof TypeError ? 'Annuaire momentanément indisponible.' : error.message;
+      showSearchStatus(`${message} Vous pouvez remplir la fiche manuellement.`, true);
+    }
   } finally {
     if (controller === active) {
       controller = undefined;
