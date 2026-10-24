@@ -25,7 +25,7 @@ function setManual(open) {
   manualFields.hidden = !open;
   manualToggle.setAttribute('aria-expanded', String(open));
   manualToggle.textContent = open ? 'Masquer la saisie manuelle' : 'Vous ne voyez pas votre entreprise ? Cliquez ici';
-  for (const name of ['business', 'firstName', 'lastName', 'email', 'consent']) form.elements[name].required = open;
+  for (const name of ['business', 'firstName', 'lastName']) form.elements[name].required = open;
   if (open) {
     selectedCompany = null;
     selectedView.hidden = true;
@@ -157,6 +157,7 @@ function payload() {
     firstName: form.elements.firstName.value.trim(),
     lastName: form.elements.lastName.value.trim(),
     email: form.elements.email.value.trim(),
+    phone: form.elements.phone.value.trim(),
     business: form.elements.business.value.trim(),
     siren: form.elements.siren.value.trim(),
     message: form.elements.message.value.trim(),
@@ -175,6 +176,9 @@ function payload() {
     city: siege.libelle_commune || '',
     activity: company.activite_principale || '',
     legalForm: company.nature_juridique || '',
+    email: form.elements.email.value.trim(),
+    phone: form.elements.phone.value.trim(),
+    consent: form.elements.consent.checked,
   };
 }
 
