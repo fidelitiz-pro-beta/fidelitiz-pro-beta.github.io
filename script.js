@@ -88,9 +88,44 @@ function demandText() {
   return `Bonjour FIDELITIZ,\n\nJe souhaite participer à la bêta pour mon commerce.\n\nEntreprise : ${data.get('business')}\nSIREN : ${data.get('siren') || 'Non renseigné'}\n\nContact : ${data.get('firstName')} ${data.get('lastName')}\nE-mail : ${data.get('email')}\n\nMon projet : ${data.get('message') || 'Je souhaite en savoir plus.'}\n\nJ’accepte l’utilisation de ces informations pour recevoir une réponse à ma demande.`;
 }
 
-form.addEventListener('submit', event => {
+const contactApi = form.dataset.apiUrl;
+if (contactApi) {
+  form.querySelector('.submit').innerHTML = 'Envoyer ma demande <span aria-hidden="true">↗</span>';
+  form.querySelector('.send-note').textContent = 'Votre demande sera transmise à l’équipe FIDELITIZ.';
+}
+
+form.addEventListener('submit', async event => {
   event.preventDefault();
   if (!form.reportValidity()) return;
+  if (contactApi) {
+    const button = form.querySelector('.submit');
+    button.disabled = true;
+    formStatus.textContent = 'Envoi en cours…';
+    try {
+      const response = await fetch(`${contactApi.replace(/\/$/, '')}/api/contact`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          firstName: form.elements.firstName.value.trim(),
+          lastName: form.elements.lastName.value.trim(),
+          email: form.elements.email.value.trim(),
+          business: form.elements.business.value.trim(),
+          siren: form.elements.siren.value.trim(),
+          message: form.elements.message.value.trim(),
+          consent: form.elements.consent.checked,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Envoi indisponible.');
+      form.reset();
+      search.value = '';
+      results.replaceChildren();
+      formStatus.textContent = 'Demande envoyée. Nous vous répondrons personnellement.';
+    } catch (error) {
+      formStatus.textContent = `${error.message} Réessayez plus tard ou écrivez-nous directement.`;
+    } finally { button.disabled = false; }
+    return;
+  }
   const subject = `Bêta FIDELITIZ — ${form.elements.business.value}`;
   formStatus.textContent = 'Votre messagerie va s’ouvrir. Vérifiez et envoyez votre e-mail pour finaliser la demande.';
   window.location.href = `mailto:bonjour@fidelitiz.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(demandText())}`;
