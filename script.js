@@ -156,13 +156,20 @@ form.addEventListener('submit', async event => {
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.error || 'Envoi indisponible.');
+      clearTimeout(timer);
+      ++searchVersion;
+      controller?.abort();
+      controller = undefined;
+      searchButton.disabled = false;
       form.reset();
       search.value = '';
       autoBusiness = '';
       results.replaceChildren();
-      formStatus.textContent = 'Demande envoyée. Nous vous répondrons personnellement.';
+      showSearchStatus('');
+      formStatus.textContent = 'Votre demande a bien été envoyée. Notre équipe vous contactera rapidement.';
     } catch (error) {
-      formStatus.textContent = `${error.message} Réessayez plus tard ou écrivez-nous directement.`;
+      const message = error instanceof TypeError ? 'Connexion impossible avec le serveur.' : error.message;
+      formStatus.textContent = `${message} Réessayez plus tard ou écrivez-nous directement.`;
     } finally { button.disabled = false; }
     return;
   }
