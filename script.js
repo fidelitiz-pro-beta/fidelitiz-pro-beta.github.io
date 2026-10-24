@@ -4,8 +4,12 @@ const results = document.querySelector('#results');
 const searchStatus = document.querySelector('#search-status');
 const formStatus = document.querySelector('#form-status');
 const searchButton = document.querySelector('#search-button');
+const businessInput = form.elements.business;
+const searchCache = new Map();
 let controller;
 let timer;
+let searchVersion = 0;
+let autoBusiness = '';
 
 function showSearchStatus(message, error = false) {
   searchStatus.textContent = message;
@@ -13,12 +17,36 @@ function showSearchStatus(message, error = false) {
 }
 
 function chooseCompany(company) {
-  form.elements.business.value = company.nom_complet || company.nom_raison_sociale || '';
+  businessInput.value = company.nom_complet || company.nom_raison_sociale || '';
+  autoBusiness = businessInput.value;
   form.elements.siren.value = company.siren || '';
-  search.value = form.elements.business.value;
+  search.value = businessInput.value;
   results.replaceChildren();
   showSearchStatus('Entreprise sélectionnée. Vérifiez le nom avant de continuer.');
   form.elements.firstName.focus();
+}
+
+function showCompanies(companies) {
+  results.replaceChildren();
+  if (!companies.length) {
+    showSearchStatus('Aucun résultat. Le nom du commerce peut être saisi manuellement.');
+    return;
+  }
+  showSearchStatus(`${companies.length} résultat${companies.length > 1 ? 's' : ''} — sélectionnez votre entreprise.`);
+  const fragment = document.createDocumentFragment();
+  for (const company of companies) {
+    const button = document.createElement('button');
+    const name = document.createElement('strong');
+    const detail = document.createElement('span');
+    button.type = 'button';
+    button.className = 'result';
+    name.textContent = company.nom_complet || company.nom_raison_sociale || 'Entreprise';
+    detail.textContent = `SIREN ${company.siren || '—'} · ${company.siege?.libelle_commune || 'Ville non renseignée'}`;
+    button.append(name, detail);
+    button.addEventListener('click', () => chooseCompany(company));
+    fragment.append(button);
+  }
+  results.append(fragment);
 }
 
 async function runSearch() {
@@ -28,44 +56,43 @@ async function runSearch() {
     showSearchStatus('Saisissez au moins 3 caractères.', true);
     return;
   }
+  const version = ++searchVersion;
   controller?.abort();
+  const key = query.toLocaleLowerCase('fr-FR');
+  const cached = searchCache.get(key);
+  if (cached && Date.now() - cached.time < 10 * 60 * 1000) {
+    showCompanies(cached.companies);
+    searchButton.disabled = false;
+    return;
+  }
   controller = new AbortController();
   const active = controller;
   results.replaceChildren();
-  showSearchStatus('Recherche en cours…');
+  showSearchStatus('Recherche en cours… Vous pouvez continuer à remplir le formulaire.');
   searchButton.disabled = true;
   try {
     const url = new URL('https://recherche-entreprises.api.gouv.fr/search');
     url.searchParams.set('q', query);
     url.searchParams.set('per_page', '6');
+    url.searchParams.set('minimal', 'true');
+    url.searchParams.set('include', 'siege');
     const response = await fetch(url, {
       signal: active.signal,
       headers: { accept: 'application/json' }
     });
     if (!response.ok) throw new Error(response.status === 429 ? 'Trop de recherches. Réessayez dans un instant.' : 'Recherche momentanément indisponible.');
     const data = await response.json();
+    if (version !== searchVersion) return;
     const companies = Array.isArray(data.results) ? data.results : [];
-    if (!companies.length) {
-      showSearchStatus('Aucun résultat. Remplissez le nom du commerce manuellement.');
-      return;
-    }
-    showSearchStatus(`${companies.length} résultat${companies.length > 1 ? 's' : ''} — sélectionnez votre entreprise.`);
-    for (const company of companies) {
-      const button = document.createElement('button');
-      const name = document.createElement('strong');
-      const detail = document.createElement('span');
-      button.type = 'button';
-      button.className = 'result';
-      name.textContent = company.nom_complet || company.nom_raison_sociale || 'Entreprise';
-      detail.textContent = `SIREN ${company.siren || '—'} · ${company.siege?.libelle_commune || 'Ville non renseignée'}`;
-      button.append(name, detail);
-      button.addEventListener('click', () => chooseCompany(company));
-      results.append(button);
-    }
+    searchCache.set(key, { companies, time: Date.now() });
+    showCompanies(companies);
   } catch (error) {
-    if (error.name !== 'AbortError') showSearchStatus(`${error.message} Vous pouvez remplir la fiche manuellement.`, true);
+    if (version === searchVersion && error.name !== 'AbortError') showSearchStatus(`${error.message} Vous pouvez remplir la fiche manuellement.`, true);
   } finally {
-    if (controller === active) searchButton.disabled = false;
+    if (controller === active) {
+      controller = undefined;
+      searchButton.disabled = false;
+    }
   }
 }
 
@@ -79,8 +106,18 @@ search.addEventListener('keydown', event => {
 });
 search.addEventListener('input', () => {
   clearTimeout(timer);
-  if (search.value.trim().length >= 3) timer = setTimeout(runSearch, 500);
-  else { controller?.abort(); results.replaceChildren(); showSearchStatus(''); }
+  ++searchVersion;
+  controller?.abort();
+  controller = undefined;
+  searchButton.disabled = false;
+  const query = search.value.trim();
+  if (!/^\d{9}(\d{5})?$/.test(query) && (!businessInput.value || businessInput.value === autoBusiness)) {
+    businessInput.value = query;
+    autoBusiness = query;
+  }
+  results.replaceChildren();
+  if (query.length >= 3) timer = setTimeout(runSearch, /^\d{9}(\d{5})?$/.test(query) ? 0 : 300);
+  else showSearchStatus('');
 });
 
 function demandText() {
@@ -119,6 +156,7 @@ form.addEventListener('submit', async event => {
       if (!response.ok) throw new Error(result.error || 'Envoi indisponible.');
       form.reset();
       search.value = '';
+      autoBusiness = '';
       results.replaceChildren();
       formStatus.textContent = 'Demande envoyée. Nous vous répondrons personnellement.';
     } catch (error) {
